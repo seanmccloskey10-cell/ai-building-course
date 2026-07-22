@@ -21,9 +21,10 @@ Fetch the folder `01-AI-Roast-Generator` from this PUBLIC GitHub repository:
     https://github.com/seanmccloskey10-cell/ai-building-course
 
 Put its CONTENTS directly into my current folder - so I end up with index.html,
-app.js, package.json, netlify.toml, README.md, PROMPTS.md, .env.example, .gitignore
-and a netlify/functions/ folder sitting right here. I should NOT end up with a nested
-`ai-building-course` folder or a nested `01-AI-Roast-Generator` folder.
+app.js, package.json, package-lock.json, netlify.toml, README.md, PROMPTS.md,
+STUDENT-PROMPT.md, .env.example, .gitignore and a netlify/functions/ folder sitting
+right here. I should NOT end up with a nested `ai-building-course` folder or a nested
+`01-AI-Roast-Generator` folder.
 
 Use whichever method works on my machine - check what I actually have before choosing:
 
