@@ -1,0 +1,25 @@
+# ---------------------------------------------------------------------------
+# YOUR API KEY LIVES IN .env. THIS LINE IS WHAT KEEPS IT OFF GITHUB.
+#
+# This file travels with the project on purpose. When you copy this folder
+# somewhere else and run `git init`, this rule comes with it - so your key is
+# protected from your very first commit, without you having to remember.
+#
+# `.env.example` is deliberately NOT ignored: it holds a fake placeholder and
+# shows other people which variable they need to set.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# Installed packages - `npm install` recreates these
+node_modules/
+
+# Netlify's local, machine-specific state
+.netlify
+
+# Editor + OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
