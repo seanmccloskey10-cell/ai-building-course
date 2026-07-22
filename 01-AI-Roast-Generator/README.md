@@ -85,9 +85,14 @@ node --version
 ```
 
 If that prints `v20.x` or higher, you're fine. If it prints something lower, or
-"command not found", install the LTS version from [nodejs.org](https://nodejs.org) and
-then **close and reopen your terminal** — a fresh terminal is what picks up the new
-install.
+"command not found", install the LTS version from [nodejs.org](https://nodejs.org).
+
+> **After installing Node, you must restart where you're typing — and "restart" means
+> more than opening a new tab.** A brand-new terminal window picks up the new install,
+> but **VS Code does not**: opening a fresh terminal tab inside it still inherits the
+> old settings from when VS Code launched. You have to quit VS Code completely and
+> reopen it. Same for Claude Code — restart it. If `node --version` still fails after
+> that, restart the computer; it always works and costs less time than debugging it.
 
 **An Anthropic API key**, which is the one step nobody can do for you. See below.
 
@@ -123,11 +128,16 @@ You do **not** need Python, Git, or the Netlify CLI installed. The setup handles
 
 Do these in a terminal, from inside this project folder.
 
-> **Opening a terminal here**
-> **Windows** — open the folder in File Explorer, type `cmd` in the address bar, hit
-> Enter. Or use the VS Code terminal (`Ctrl` + `` ` ``).
-> **Mac** — right-click the folder in Finder → Services → New Terminal at Folder. Or use
-> the VS Code terminal (`Cmd` + `` ` ``).
+> **Opening a terminal in this folder**
+>
+> **Windows** — open the folder in File Explorer, type `cmd` in the address bar and hit
+> Enter. (Or in VS Code: `Ctrl` + `` ` ``.)
+>
+> **Mac** — press `Cmd` + `Space`, type `Terminal`, hit Enter. Then type `cd ` — with a
+> space after it — and **drag your project folder from Finder onto the Terminal
+> window**. It fills in the path for you. Hit Enter.
+> (Or in VS Code: `Ctrl` + `` ` `` — that's **Control**, not Command, on Mac too.
+> `Cmd` + `` ` `` is a system shortcut and won't open a terminal.)
 
 **1. Install the dependencies**
 
@@ -139,19 +149,31 @@ This reads `package.json` and downloads what the project needs, including the Ne
 tool — into this folder only. Nothing is installed system-wide. It takes a minute or two
 the first time and prints a wall of text; that is normal.
 
+> **It will end by reporting some "vulnerabilities" and deprecation warnings, possibly
+> in red.** Ignore them. They come from inside the Netlify tool's own dependencies, they
+> do not affect this project, and they are not a sign anything went wrong. In particular
+> **do not run `npm audit fix --force`** — it "fixes" them by installing incompatible
+> versions and is far more likely to break your project than the warnings are.
+
 **2. Create your `.env` file**
 
-Copy the example file and then edit the copy:
+Copy the example file and then edit the copy.
+
+On **Mac**:
 
 ```bash
-# Mac / Linux / Git Bash
 cp .env.example .env
 ```
 
-```powershell
-# Windows PowerShell or cmd
+On **Windows**:
+
+```
 copy .env.example .env
 ```
+
+> Copy just the command line itself. If you paste a `#` comment line into Windows `cmd`
+> it answers `'#' is not recognized as an internal or external command` — which looks
+> alarming and means nothing. The command on the next line still runs.
 
 Open the new `.env` in your editor and replace the placeholder with your real key, so it
 reads:
@@ -206,9 +228,11 @@ plain English.
 | "No API key found" | No `.env` file, or it's named `.env.txt`, or you didn't restart the server after creating it |
 | "Your API key was rejected" | Typo, stray quotes, or a trailing space in `.env` |
 | "Your Anthropic account has no credit" | The Billing step above. A Claude.ai subscription is not API credit |
-| `command not found: npm` | Node.js isn't installed, or you need to reopen your terminal |
+| `command not found: npm` | Node.js isn't installed, or you need to fully quit and reopen VS Code / your terminal (see the Node note above) |
+| `npm.ps1 cannot be loaded because running scripts is disabled` | Windows PowerShell blocks scripts by default. Easiest fix: use `cmd` instead (File Explorer address bar → type `cmd`). Or run once in PowerShell: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` and answer `Y` |
+| **A 404, or "Unexpected token" on your very first roast** | The server says "ready" slightly before it really is — on the first run it's still downloading one last component in the background. Wait 30 seconds and click again. This only ever happens once |
 | Port 8888 already in use | An old server is still running. Close the other terminal, or run `npx netlify dev --port 8899` |
-| Page loads but the button does nothing | Open developer tools (`F12`) and read the Console tab |
+| Page loads but the button does nothing | Open developer tools and read the Console tab — `F12` on Windows, `Cmd` + `Option` + `I` on Mac |
 
 **The server reads `.env` once, at startup.** Every time you change that file, stop the
 server with `Ctrl` + `C` and start it again. This single fact explains most "I fixed it
@@ -220,19 +244,31 @@ questions is the actual skill this course teaches.
 
 ---
 
-## Before you show anyone
+## Before you put this on GitHub
 
-Run this in the project folder:
+**Right now you don't need to do anything.** Your folder isn't a Git repository and
+nothing is being tracked, so there is nothing that could accidentally publish your key.
 
-```bash
+It matters the day you decide to put this online. The moment you run `git init` here,
+the `.gitignore` that came with this project starts protecting you — it lists `.env`, so
+Git will refuse to track it. That file travels with the folder precisely so you don't
+have to remember.
+
+To see the protection working, once you have run `git init`:
+
+```
 git status
 ```
 
-If `.env` appears in that list, **stop** — something is wrong with your `.gitignore`, and
-committing would publish your key. It should never appear. If you have already pushed a
-key somewhere public, don't just delete the file: go to
-[console.anthropic.com](https://console.anthropic.com), delete that key, and make a new
-one. Deleting a file does not un-share a secret.
+`.env` should **not** appear anywhere in that output. Everything else can be committed
+safely. If `.env` ever does appear, stop — something has gone wrong with `.gitignore`
+and committing would publish your key.
+
+> **If you ever leak a key** — pushed it, pasted it in a screenshot, sent it in a
+> message — deleting the file is not enough. The secret is already out. Go to
+> [console.anthropic.com](https://console.anthropic.com), **delete that key**, and
+> create a new one. That instantly makes the leaked one worthless. Do it immediately;
+> automated scrapers find exposed keys within minutes.
 
 ---
 

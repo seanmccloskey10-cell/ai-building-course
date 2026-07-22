@@ -53,9 +53,16 @@ STEP 2 - CHECK MY SETUP
 Check that Node.js is installed and is version 20 or newer (`node --version`).
 
 If it is missing or too old, stop and tell me to install the LTS build from
-https://nodejs.org, and that I must close and reopen my terminal afterwards. Don't
-try to install Node for me and don't try to work around it - nothing else will work
-until that's sorted.
+https://nodejs.org. Warn me that a new terminal TAB is not enough: VS Code and Claude
+Code keep the settings they had when they launched, so I have to fully quit and reopen
+them (and if it still fails after that, restart the computer). Don't try to install
+Node for me and don't try to work around it - nothing else will work until that's
+sorted.
+
+On Windows, if `npm` or `npx` fails with "npm.ps1 cannot be loaded because running
+scripts is disabled on this system", that is PowerShell's default script policy, not a
+broken install. Tell me I can either use `cmd` instead, or run
+`Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once in PowerShell and answer Y.
 
 STEP 3 - MY API KEY (this is the only part you cannot do for me)
 
@@ -88,8 +95,11 @@ When I give you the key:
     the = and no trailing whitespace or blank line after it.
   - Confirm that .gitignore already lists .env, and show me the line. Explain that
     this is what stops my key reaching GitHub.
-  - Do not print my key back to me in full, and never put it in a file other than
-    .env.
+  - Never write my key anywhere except .env. Do not echo it back to me at all -
+    not in full, not truncated, not as an example of what a leaked key looks
+    like. If you need to refer to it later, say "your key" or use an obvious
+    fake like sk-ant-xxxxx. Do not paste it into chat, a comment, a log, a
+    commit message, or any other file.
 
 STEP 4 - INSTALL AND RUN
 
@@ -101,24 +111,34 @@ Then start the app with:
 
     npx netlify dev
 
-Use exactly that command. Do NOT add the `--offline` flag: it stops the serverless
-function being served and the app will return 404 when I click the button. Do not
-install the Netlify CLI globally - `npm install` already put a copy in this folder and
-npx will find it.
+Do not install the Netlify CLI globally - `npm install` already put a copy in this
+folder and npx will find it.
 
 If it asks me to log in to Netlify or link a site, tell me I can skip that - local
-development works fine without a Netlify account.
+development works fine with no Netlify account at all.
+
+IMPORTANT, and the single most likely thing to make me think the app is broken when it
+isn't: on the FIRST run, netlify prints "Local dev server ready" BEFORE it is actually
+ready. It downloads one more component in the background, and every request goes
+through that component, so a roast attempted too early returns a 404 or an
+"Unexpected token" error. Warn me about this BEFORE I click anything. If my first
+roast fails that way, wait about 30 seconds and try again rather than changing any
+code. It only happens on the very first run.
 
 Tell me to open http://localhost:8888 and try it: pick a photo, hit the button, get
 roasted. If port 8888 is busy, use `npx netlify dev --port 8899` and tell me the new
 address.
 
+If I don't have a photo to hand, make a small test image in the folder so we can prove
+it works.
+
 STEP 5 - WHEN IT BREAKS, AND MAKING IT MINE
 
 If anything fails, read the actual error and explain what it means before changing
-anything. The most common causes, in order: no credit on the Anthropic account; a
-typo or stray quote in .env; the server not restarted after .env changed (it only
-reads that file at startup); the wrong Node version.
+anything. The most common causes, in order: the first-run timing issue above; no
+credit on the Anthropic account; a typo or stray quote in .env; the server not
+restarted after .env changed (it only reads that file at startup); the wrong Node
+version.
 
 Once it works:
   - Show me where in netlify/functions/roast.js the comedian's personality is set,
