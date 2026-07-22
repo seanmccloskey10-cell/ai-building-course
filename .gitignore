@@ -1,0 +1,48 @@
+# ---------------------------------------------------------------------------
+# Secrets. This is the whole point of Project 01 - read it there.
+#
+# A pattern with no slash in it matches at EVERY level of the repo, so the
+# `.env` line below covers `.env`, `01-AI-Roast-Generator/.env`, and any
+# `.env` a future project adds. You do not need to add a new line per project.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+
+# ...but the example files carry no secrets and MUST be committed, so they
+# are pulled back out of the ignore above. Last matching rule wins.
+!.env.example
+!.env.sample
+
+# ---------------------------------------------------------------------------
+# Internal build notes. This repo is a student-facing teaching artifact, not a
+# working log - the build plan and session log stay on the authoring machine.
+# ---------------------------------------------------------------------------
+docs/
+
+# ---------------------------------------------------------------------------
+# Dependencies - reinstalled with `npm install`, never committed
+# ---------------------------------------------------------------------------
+node_modules/
+
+# ---------------------------------------------------------------------------
+# Netlify local state - machine-specific link between your folder and your
+# Netlify account. Yours, not ours.
+# ---------------------------------------------------------------------------
+.netlify/
+
+# ---------------------------------------------------------------------------
+# Editor + OS junk
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# A stray file Windows can create when a command redirects output badly
+nul
+
+# Python leftovers, in case anyone runs a local server the old way
+__pycache__/
+venv/
+*.pyc
