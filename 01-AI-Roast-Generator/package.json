@@ -1,0 +1,20 @@
+{
+  "name": "ai-roast-generator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Project 01 of the AI Building Course - upload a picture, get roasted by Claude, and learn where an API key is allowed to live.",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.112.5"
+  },
+  "devDependencies": {
+    "netlify-cli": "^26.2.0"
+  }
+}

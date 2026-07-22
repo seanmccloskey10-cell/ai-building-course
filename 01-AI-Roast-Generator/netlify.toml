@@ -1,0 +1,12 @@
+# Netlify configuration.
+#
+# `publish = "."` tells Netlify that the website is just the files in this
+# folder - index.html and app.js. There is no build step to run.
+#
+# `functions` points at the folder holding server-side code. Every .js file in
+# there becomes a URL: netlify/functions/roast.js is served at
+# /.netlify/functions/roast - which is exactly what app.js calls.
+
+[build]
+  publish = "."
+  functions = "netlify/functions"

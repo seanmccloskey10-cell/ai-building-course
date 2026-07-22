@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Picture Roast Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-orange': '#FF6B35',
+                        'brand-purple': '#6B35FF',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #FF6B35 0%, #6B35FF 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-orange-50">
+    <!-- Big colorful gradient header -->
+    <div class="gradient-bg py-12 text-center mb-8 shadow-lg">
+        <h1 class="text-6xl md:text-7xl font-black text-white drop-shadow-2xl mb-3">
+            🔥 AI Roast Generator
+        </h1>
+        <p class="text-xl md:text-2xl text-white/90 font-bold">
+            Get ROASTED by AI! 😂
+        </p>
+    </div>
+
+    <div class="container mx-auto px-4 max-w-2xl">
+        <!-- Fun colorful card -->
+        <div class="bg-white rounded-3xl shadow-2xl p-10 transform hover:scale-105 transition-transform">
+            <p class="text-gray-700 text-center mb-8 text-xl font-medium">
+                Upload a picture and let the AI absolutely destroy it! 💀
+            </p>
+
+            <!-- Upload section -->
+            <div class="mb-6">
+                <label for="image-upload" class="block mb-4 text-gray-800 font-bold text-lg">
+                    📸 Choose Your Sacrifice
+                </label>
+                <input
+                    type="file"
+                    id="image-upload"
+                    accept="image/*"
+                    class="block w-full text-gray-700 px-6 py-4 border-4 border-purple-300 rounded-2xl cursor-pointer hover:border-orange-400 transition-all text-lg font-medium bg-gradient-to-r from-purple-50 to-orange-50"
+                >
+            </div>
+
+            <!-- Result area (hidden initially) -->
+            <div id="result" class="mt-8"></div>
+        </div>
+
+        <!-- Fun emoji decoration -->
+        <div class="text-center mt-8 text-4xl space-x-4">
+            <span class="inline-block animate-bounce">😂</span>
+            <span class="inline-block animate-bounce" style="animation-delay: 0.1s;">🔥</span>
+            <span class="inline-block animate-bounce" style="animation-delay: 0.2s;">💀</span>
+        </div>
+    </div>
+
+    <!-- Footer with social links -->
+    <footer class="mt-16 pb-8 text-center">
+        <div class="flex justify-center space-x-8 mb-4">
+            <a href="#" class="text-gray-600 hover:text-brand-purple transition-colors text-lg font-bold">
+                📱 TikTok
+            </a>
+            <a href="#" class="text-gray-600 hover:text-brand-orange transition-colors text-lg font-bold">
+                📸 Instagram
+            </a>
+        </div>
+        <p class="text-gray-500 text-sm">Made with 🔥 and AI</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
