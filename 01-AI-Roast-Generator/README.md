@@ -6,6 +6,15 @@ It is a silly app that teaches the least silly thing in this whole course: **whe
 API key is allowed to live.** Get this wrong on a real project and strangers spend your
 money. Get it right here, once, and you will get it right forever.
 
+> ### 👉 Just want to build it?
+> Don't follow this README by hand. Make a new empty folder, open it in
+> [Claude Code](https://claude.com/claude-code), and paste in the prompt from
+> **[STUDENT-PROMPT.md](STUDENT-PROMPT.md)**. The agent fetches the files, walks you
+> through your API key, and coaches you through running it.
+>
+> This README is the reference for what it's all doing, and where to look when
+> something breaks.
+
 ---
 
 ## What you'll build
