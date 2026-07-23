@@ -44,7 +44,7 @@ Each one is small enough to finish in a sitting and exists to teach the concept 
 | 08 | [Million Dollar Idea App](08-Personal-Notepad/) | **PWA** - making a website installable on a phone like a native app | ✅ Ready |
 | 09 | Stock Explorer | **Charts and data-to-story** - drawing real data, then having an AI narrate what the numbers mean | 🔜 Coming |
 | 10 | [Daily AI Digest](10-Daily-Digest/) | **Automation** - code that runs on a schedule without you, and emails you the result via Resend | ✅ Ready |
-| 11 | Command Center | **The capstone.** No walkthrough, no answer key - just a brief. Use everything the ten taught you | 🔜 Coming |
+| 11 | [Command Center](11-Command-Center/) | **The capstone.** No walkthrough, no answer key - just a brief. Use everything the ten taught you | ✅ Ready |
 
 Projects land one per lesson. This table is the source of truth for what is actually
 ready - if a row says "Coming", the folder is not here yet.
