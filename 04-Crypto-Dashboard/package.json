@@ -1,0 +1,17 @@
+{
+  "name": "crypto-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Project 04 of the AI Building Course - a live crypto price dashboard that teaches pulling real data from a keyless public API. No API key, no cost.",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "netlify-cli": "^26.2.0"
+  }
+}
