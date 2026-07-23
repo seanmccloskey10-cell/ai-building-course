@@ -1,0 +1,23 @@
+# ---------------------------------------------------------------------------
+# Your keys live in .env, never in a committed file. Same habit as Project 01 -
+# this line stops your Anthropic key reaching GitHub.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# Installed packages - `npm install` recreates these
+node_modules/
+
+# Build output, if you build with Vite / a bundler
+dist/
+.vite/
+
+# Netlify's local, machine-specific state (if you use it)
+.netlify
+
+# Editor + OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

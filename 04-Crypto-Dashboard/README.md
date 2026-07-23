@@ -39,8 +39,8 @@ No server of your own, no database, no key.
 ## The concept: keyless public APIs (the mirror of Project 01)
 
 An **API** is just a way for one program to ask another program for something. In Project
-01 you asked OpenAI/Anthropic to write a roast — and that request cost money, so it needed
-a secret key, so the key had to live on a server where visitors couldn't see it.
+01 you asked Anthropic to write a roast — and that request cost money, so it needed a secret
+key, so the key had to live on a server where visitors couldn't see it.
 
 This project asks **CoinGecko** for crypto prices. That request is **free and public** —
 CoinGecko hands basic price data to anyone who asks, no key required. Open your browser's
