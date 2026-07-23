@@ -376,16 +376,22 @@ async function sendEmail(emailHtml) {
         return;
     }
 
+    // Past this point you've asked to actually send (SEND_EMAIL=true), so a
+    // missing piece is a real error, not a quiet skip. We exit non-zero so a
+    // scheduled GitHub run turns RED instead of showing a green check with no
+    // email - a passing run that silently sends nothing is the worst outcome
+    // for an automation you're not watching.
     const emailTo = process.env.EMAIL_TO;
     if (!emailTo) {
-        console.log('⚠️ No EMAIL_TO address configured');
-        return;
+        console.log('\n❌ SEND_EMAIL is true but EMAIL_TO is empty - there is no address to send to.');
+        console.log('   Set EMAIL_TO to your own email: in .env locally, or as a repository secret on GitHub.\n');
+        process.exit(1);
     }
 
     if (!process.env.RESEND_API_KEY) {
-        console.log('⚠️ SEND_EMAIL is true but no RESEND_API_KEY is set - skipping the email.');
-        console.log('   Add RESEND_API_KEY to your .env (get one free at https://resend.com).');
-        return;
+        console.log('\n❌ SEND_EMAIL is true but no RESEND_API_KEY is set - cannot send the email.');
+        console.log('   Add RESEND_API_KEY (free at https://resend.com): in .env locally, or as a repository secret.\n');
+        process.exit(1);
     }
 
     // Created here, not at the top of the file, so the digest can run without a
@@ -410,12 +416,13 @@ async function sendEmail(emailHtml) {
 
         if (error) {
             console.log(`  ✗ Failed to send email: ${error.message}`);
-            return;
+            process.exit(1);
         }
 
         console.log(`  ✓ Email sent successfully! (ID: ${data.id})`);
     } catch (error) {
         console.log(`  ✗ Failed to send email: ${error.message}`);
+        process.exit(1);
     }
 }
 

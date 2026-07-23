@@ -155,13 +155,34 @@ morning on its own:
    skills from Project 03 and normal `git` get you there).
 2. **Add your keys as repository secrets** so GitHub can use them without them ever appearing
    in your code: in your repo, go to **Settings → Secrets and variables → Actions → New
-   repository secret**, and add three: `ANTHROPIC_API_KEY`, `RESEND_API_KEY`, and `EMAIL_TO`.
-3. **Switch the schedule on.** Open `.github/workflows/daily-digest.yml` and **uncomment the
-   two `schedule` lines** (remove the `#` in front of them). Commit and push.
+   repository secret**, and add **all three**: `ANTHROPIC_API_KEY`, `RESEND_API_KEY`, and
+   `EMAIL_TO`. `EMAIL_TO` isn't sensitive, but it's still required — if any of the three is
+   missing, the run **fails on purpose** (a red ✗ in the Actions tab) rather than passing
+   quietly while emailing nothing.
+3. **Switch the schedule on.** Open `.github/workflows/daily-digest.yml` and, on the two
+   commented `schedule` lines, **delete the `# ` at the start of each — the hash *and* the
+   single space after it** (deleting only the `#` leaves the indentation off by one space and
+   GitHub will reject the file as invalid). Your `on:` block should end up looking *exactly*
+   like this:
+
+   ```yaml
+   on:
+     schedule:
+       - cron: '0 7 * * *'
+     workflow_dispatch:
+   ```
+
+   Then commit and push.
 
 That's it — GitHub now runs your digest every day at 7am UTC and emails it to you, for free,
-forever, with your laptop off. You can also run it by hand anytime from your repo's
-**Actions** tab (the "Run workflow" button).
+with your laptop off. You can also run it by hand anytime from your repo's **Actions** tab
+(the "Run workflow" button).
+
+> **One caveat about "runs by itself forever":** on a **public** repo, GitHub pauses a
+> scheduled workflow after **60 days with no new commits** (it emails you when it does). If
+> your digest just runs and you never touch the repo, it'll quietly stop after about two
+> months. To keep it alive, push any small commit now and then, or re-enable it with one
+> click from the **Actions** tab when GitHub pauses it.
 
 > **Why it ships switched off:** the schedule is commented out on purpose so the automation
 > can't fire before you've added your secrets and decided you want it. Turning it on is a

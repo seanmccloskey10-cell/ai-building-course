@@ -9,11 +9,17 @@ name: Daily Digest
 # fail (or, once keys are added, email you) on a timer you didn't ask for yet.
 #
 # To turn the daily run ON, once you've added ANTHROPIC_API_KEY, RESEND_API_KEY
-# and EMAIL_TO as repository secrets (README explains how):
-#   uncomment the two `schedule` lines below.
+# and EMAIL_TO as repository secrets (README explains how): on the two `schedule`
+# lines below, delete the "# " at the start — the hash AND the one space after
+# it. The result must line up exactly like this (schedule and workflow_dispatch
+# both indented two spaces, the cron line four):
+#   on:
+#     schedule:
+#       - cron: '0 7 * * *'
+#     workflow_dispatch:
 on:
   # schedule:
-  #   - cron: '0 7 * * *'   # every day at 7:00 AM UTC — uncomment to enable
+  #   - cron: '0 7 * * *'   # every day at 7:00 AM UTC — delete the "# " to enable
   workflow_dispatch:        # lets you run it by hand from the repo's Actions tab
 
 jobs:
