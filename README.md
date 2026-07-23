@@ -38,10 +38,10 @@ Each one is small enough to finish in a sitting and exists to teach the concept 
 | 02 | [Wordle Clone](02-Wordle-Clone/) | **Game logic** - state, rules, and turning "the rules of a game" into code | ✅ Ready |
 | 03 | [Personal Portfolio](03-Portfolio-Website/) | **Deploying** - taking a folder on your laptop and putting it on the real internet with Netlify | ✅ Ready |
 | 04 | [Crypto Dashboard](04-Crypto-Dashboard/) | **Live data** - pulling real numbers from a public API that needs no key at all, the deliberate opposite of Project 01 | ✅ Ready |
-| 05 | Habit Streak Tracker | **localStorage** - saving data in the browser so it survives a refresh, without any database | 🔜 Coming |
+| 05 | [Habit Streak Tracker](05-Habit-Tracker/) | **localStorage** - saving data in the browser so it survives a refresh, without any database | ✅ Ready |
 | 06 | Buy Me a Coffee | **Stripe** - taking an actual payment from an actual human | 🔜 Coming |
 | 07 | Dear Diary | **Supabase** - a real hosted database, with row-level security so one user cannot read another's entries | 🔜 Coming |
-| 08 | Million Dollar Idea App | **PWA** - making a website installable on a phone like a native app | 🔜 Coming |
+| 08 | [Million Dollar Idea App](08-Personal-Notepad/) | **PWA** - making a website installable on a phone like a native app | ✅ Ready |
 | 09 | Stock Explorer | **Charts and data-to-story** - drawing real data, then having an AI narrate what the numbers mean | 🔜 Coming |
 | 10 | Daily AI Digest | **Automation** - code that runs on a schedule without you, and emails you the result via Resend | 🔜 Coming |
 | 11 | Command Center | **The capstone.** No walkthrough, no answer key - just a brief. Use everything the ten taught you | 🔜 Coming |
