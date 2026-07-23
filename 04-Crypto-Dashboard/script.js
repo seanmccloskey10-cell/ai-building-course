@@ -44,6 +44,14 @@ async function fetchPrices() {
             return;
         }
 
+        // An empty array is valid JSON but means NO coins matched. This is what
+        // happens if a coin id in the API_URL is mistyped or has been renamed -
+        // so instead of a silent blank page, say so out loud.
+        if (data.length === 0) {
+            showNotice("🔎 No coins came back. Check the coin ids in the API_URL near the top of script.js — a typo or a renamed id will drop coins.");
+            return;
+        }
+
         clearNotice();
         displayPrices(data);
 
