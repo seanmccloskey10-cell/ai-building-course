@@ -188,7 +188,12 @@ off, open `index.html` and:
 
 - Put **your name** in the header and rewrite the "About Me" paragraph.
 - Swap the two example projects for things *you've* built — including projects 01 and 02
-  from this course. Point the "View Project" links at your deployed versions.
+  from this course. Point each "View Project" link at wherever people can actually see
+  that project: its live URL if you've put it online, or its code on GitHub. (Project 02,
+  the Wordle clone, is a plain static site — you could deploy it exactly the way you just
+  deployed this one. Project 01 needs a little more setup to go live, so link its code for
+  now.) If a project isn't online yet, link its GitHub or just remove that button — don't
+  leave a link that goes nowhere.
 - Fill in the **GitHub / LinkedIn / X** links in the footer, or delete the ones you don't
   use.
 - Change the skills to your own.

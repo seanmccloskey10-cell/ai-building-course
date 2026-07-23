@@ -41,7 +41,7 @@ Then ask your agent to help you understand what just happened:
 
 ## ✍️ Make it yours
 
-> Help me replace the placeholder content with my real details: my name in the header, a real "about me", my actual projects (including the roast generator and Wordle clone I built earlier), and real links to my GitHub and LinkedIn. Then help me redeploy.
+> Help me replace the placeholder content with my real details: my name in the header, a real "about me", my actual projects (including the roast generator and Wordle clone I built earlier), and real links to my GitHub and LinkedIn. For each project's "View Project" link, use its live URL if I've deployed it, otherwise link its GitHub repo or drop the button — don't leave dead links. Then help me redeploy.
 
 Other things worth trying:
 

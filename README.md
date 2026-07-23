@@ -36,7 +36,7 @@ Each one is small enough to finish in a sitting and exists to teach the concept 
 |---|---------|------------------------|--------|
 | 01 | [AI Roast Generator](01-AI-Roast-Generator/) | **API keys** - what they are, why one must never appear in code you share, and the server-side pattern that keeps yours private | ✅ Ready |
 | 02 | [Wordle Clone](02-Wordle-Clone/) | **Game logic** - state, rules, and turning "the rules of a game" into code | ✅ Ready |
-| 03 | Personal Portfolio | **Deploying** - taking a folder on your laptop and putting it on the real internet with Netlify | 🔜 Coming |
+| 03 | [Personal Portfolio](03-Portfolio-Website/) | **Deploying** - taking a folder on your laptop and putting it on the real internet with Netlify | ✅ Ready |
 | 04 | Crypto Dashboard | **Live data** - pulling real numbers from a public API that needs no key at all, the deliberate opposite of Project 01 | 🔜 Coming |
 | 05 | Habit Streak Tracker | **localStorage** - saving data in the browser so it survives a refresh, without any database | 🔜 Coming |
 | 06 | Buy Me a Coffee | **Stripe** - taking an actual payment from an actual human | 🔜 Coming |
