@@ -1,0 +1,22 @@
+# ---------------------------------------------------------------------------
+# This project's Supabase URL and anon key are PUBLIC by design and live in
+# Supabase-Configuration.js on purpose - that file is meant to be committed.
+# Your diary is protected by Row Level Security, not by hiding the key.
+#
+# But the habit still matters: if you ever add a real secret to a .env, these
+# lines stop it reaching GitHub. Keep them.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+
+# Installed packages - `npm install` recreates these
+node_modules/
+
+# Netlify's local, machine-specific state
+.netlify
+
+# Editor + OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

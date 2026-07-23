@@ -1,0 +1,17 @@
+{
+  "name": "dear-diary",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Project 07 of the AI Building Course - a private diary with real accounts and a hosted database. Teaches Supabase and Row Level Security (the database, not your code, enforces privacy). The anon key is public by design; no secret key ships.",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "netlify-cli": "^26.2.0"
+  }
+}
