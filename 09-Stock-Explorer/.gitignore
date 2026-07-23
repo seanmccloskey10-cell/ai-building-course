@@ -1,0 +1,20 @@
+# ---------------------------------------------------------------------------
+# Secrets. Both keys (Alpha Vantage, Anthropic) live in .env, which is read on
+# the SERVER by the Netlify functions - never in browser code. This line keeps
+# .env out of GitHub. The example file below carries no secrets and is kept.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# Installed packages - `npm install` recreates these
+node_modules/
+
+# Netlify's local, machine-specific state
+.netlify
+
+# Editor + OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

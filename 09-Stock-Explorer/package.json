@@ -1,0 +1,20 @@
+{
+  "name": "stock-explorer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Project 09 of the AI Building Course - draw real stock data as a chart, then have Claude narrate what the numbers mean. Keys stay server-side in Netlify functions (the Project 01 pattern).",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.112.5"
+  },
+  "devDependencies": {
+    "netlify-cli": "^26.2.0"
+  }
+}

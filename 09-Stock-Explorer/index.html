@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>📈 Stock Explorer</h1>
+        <p class="tagline">Real market data, drawn as a chart — then explained by AI.</p>
+    </header>
+
+    <main>
+        <!-- Controls -->
+        <section class="controls">
+            <form id="tickerForm">
+                <input
+                    type="text"
+                    id="symbolInput"
+                    placeholder="Ticker, e.g. AAPL"
+                    autocomplete="off"
+                    maxlength="10">
+                <button type="submit">Load</button>
+            </form>
+            <div class="presets" id="presets">
+                <button type="button" data-symbol="AAPL">AAPL</button>
+                <button type="button" data-symbol="NVDA">NVDA</button>
+                <button type="button" data-symbol="TSLA">TSLA</button>
+                <button type="button" data-symbol="MSFT">MSFT</button>
+            </div>
+            <div class="ranges" id="ranges">
+                <button type="button" data-days="30" class="active">30D</button>
+                <button type="button" data-days="90">90D</button>
+                <button type="button" data-days="0">100D</button>
+            </div>
+        </section>
+
+        <!-- Status / errors -->
+        <p id="status" class="status"></p>
+
+        <!-- Chart -->
+        <section class="card chart-card">
+            <h2 id="chartTitle">Price</h2>
+            <div id="chart" class="chart"></div>
+        </section>
+
+        <div class="lower">
+            <!-- Stats -->
+            <section class="card stats-card">
+                <h2>Stats</h2>
+                <dl id="stats" class="stats">
+                    <div><dt>Latest</dt><dd id="statPrice">—</dd></div>
+                    <div><dt>Change</dt><dd id="statChange">—</dd></div>
+                    <div><dt>High</dt><dd id="statHigh">—</dd></div>
+                    <div><dt>Low</dt><dd id="statLow">—</dd></div>
+                    <div><dt>Avg volume</dt><dd id="statVolume">—</dd></div>
+                </dl>
+            </section>
+
+            <!-- AI analysis -->
+            <section class="card ai-card">
+                <h2>What do these numbers mean?</h2>
+                <button id="analyzeBtn" disabled>🤖 Analyze with AI</button>
+                <div id="analysis" class="analysis"></div>
+                <p class="disclaimer">
+                    AI-generated and observational only, for learning — <strong>not financial
+                    advice.</strong>
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

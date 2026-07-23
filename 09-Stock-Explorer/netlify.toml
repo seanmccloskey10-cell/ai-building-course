@@ -1,0 +1,14 @@
+# Netlify configuration.
+#
+# `publish = "."` tells Netlify the website is just the files in this folder -
+# index.html, app.js, styles.css. There is no build step.
+#
+# `functions` points at the folder holding server-side code. Every .js file in
+# there becomes a URL: netlify/functions/prices.js is served at
+# /.netlify/functions/prices, and analyze.js at /.netlify/functions/analyze -
+# which is exactly what app.js calls. Your API keys live in those functions, on
+# the server, never in the browser (the Project 01 lesson).
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
