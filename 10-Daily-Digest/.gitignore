@@ -1,0 +1,20 @@
+# ---------------------------------------------------------------------------
+# YOUR KEYS LIVE IN .env. THIS LINE KEEPS THEM OFF GITHUB.
+# `.env.example` is deliberately kept (it has no real values).
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# Files the script GENERATES each time it runs - not source, don't commit.
+index.html
+email.html
+
+# Installed packages - `npm install` recreates these
+node_modules/
+
+# Editor + OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

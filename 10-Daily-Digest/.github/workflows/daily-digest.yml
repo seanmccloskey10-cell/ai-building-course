@@ -1,0 +1,33 @@
+name: Daily Digest
+
+# This is the automation itself: GitHub runs your digest for you, on a schedule,
+# for free, without your computer being on. This is what "automation" means in
+# Project 10.
+#
+# It ships DISABLED on purpose. The `schedule` trigger below is commented out so
+# that it can't run before you've added your secret keys — otherwise it would
+# fail (or, once keys are added, email you) on a timer you didn't ask for yet.
+#
+# To turn the daily run ON, once you've added ANTHROPIC_API_KEY, RESEND_API_KEY
+# and EMAIL_TO as repository secrets (README explains how):
+#   uncomment the two `schedule` lines below.
+on:
+  # schedule:
+  #   - cron: '0 7 * * *'   # every day at 7:00 AM UTC — uncomment to enable
+  workflow_dispatch:        # lets you run it by hand from the repo's Actions tab
+
+jobs:
+  send-digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+      - run: node digest.js
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          SEND_EMAIL: 'true'
