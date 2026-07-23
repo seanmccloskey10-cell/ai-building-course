@@ -21,7 +21,8 @@ plan.
 
 ## What you'll build
 
-A clean single-page portfolio. Three files, no server, no database:
+A clean single-page portfolio — three files, no backend of your own (nothing you write
+runs on a server or talks to a database):
 
 | File | What it is |
 |------|-----------|

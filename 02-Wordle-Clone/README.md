@@ -31,8 +31,11 @@ too), and the colour-reveal animation. Three files do the whole job:
 | `styles.css` | Every bit of the look: colours, the tile flip, the shake when you're wrong |
 | `app.js` | **The game itself** — this is where the logic lives |
 
-There is no server and no database. The whole game is these three files running in your
-browser.
+The game has **no backend** — no database, nothing stored anywhere, no code running on
+some other computer. The whole thing is these three files running in your own browser.
+(The `npx netlify dev` command you'll use just starts a tiny local web server to hand
+those files to your browser, and may leave a small `.netlify` folder behind — both are
+harmless plumbing, not part of your game.)
 
 ---
 
@@ -119,6 +122,11 @@ npx netlify dev
 `npx` runs the copy of the Netlify tool that `npm install` just put in this folder — you
 never need a global install, and you never need to log in to Netlify to play a game
 locally. It serves the page and opens your browser at **http://localhost:8888**.
+
+> **Netlify will print a few notices that look like warnings but aren't.** Lines like
+> "No app server detected. Using simple static server" and "Unable to determine public
+> folder" are exactly right for this project — your game is just plain files, and that's
+> what it's serving. You may also see an "AI Gateway … Forbidden" line; ignore it too.
 
 > **On the very first run, wait a moment before you play.** Netlify prints
 > "Local dev server ready" a few seconds before it genuinely is — on the first run it's
