@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Garamond', serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #8B4513 0%, #D2691E 25%, #CD853F 50%, #DEB887 75%, #F4A460 100%);
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    background: rgba(255, 248, 240, 0.95);
+    padding: 50px 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #5C2E0F;
+    text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.2);
+}
+
+.coffee-icon {
+    font-size: 200px;
+    display: block;
+    margin: 30px auto 40px;
+    position: relative;
+    animation: gentle-bob 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(139, 69, 19, 0.4));
+}
+
+.coffee-icon::before,
+.coffee-icon::after {
+    content: '~';
+    position: absolute;
+    font-size: 70px;
+    opacity: 0;
+    color: #8B4513;
+    font-weight: bold;
+}
+
+.coffee-icon::before {
+    left: 35%;
+    animation: steam-rise 2.5s infinite ease-in-out;
+}
+
+.coffee-icon::after {
+    left: 55%;
+    animation: steam-rise 2.5s infinite ease-in-out;
+    animation-delay: 0.8s;
+}
+
+@keyframes gentle-bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes steam-rise {
+    0% {
+        bottom: 90px;
+        opacity: 0;
+        transform: translateX(-50%) scale(1);
+    }
+    30% {
+        opacity: 0.9;
+    }
+    100% {
+        bottom: 180px;
+        opacity: 0;
+        transform: translateX(-50%) scale(2);
+    }
+}
+
+.coffee-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #D2691E 0%, #CD853F 100%);
+    color: #FFF8F0;
+    padding: 22px 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4);
+    transition: all 0.4s ease;
+    border: 3px solid rgba(139, 69, 19, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.coffee-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(139, 69, 19, 0.6);
+    background: linear-gradient(135deg, #CD853F 0%, #D2691E 100%);
+    border-color: #8B4513;
+}
+
+.message {
+    margin-top: 30px;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(222, 184, 135, 0.3), rgba(210, 105, 30, 0.2));
+    border-radius: 20px;
+    border: 2px solid rgba(139, 69, 19, 0.2);
+    box-shadow: 0 8px 16px rgba(139, 69, 19, 0.15);
+}
+
+.message h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #5C2E0F;
+}
+
+.message p {
+    color: #5C2E0F;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* Thank You Page */
+.thank-you {
+    text-align: center;
+    padding: 50px 30px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.thank-you h1 {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    color: #5C2E0F;
+    animation: bounce 1.2s ease;
+    text-shadow: 3px 3px 6px rgba(139, 69, 19, 0.3);
+}
+
+.thank-you p {
+    font-size: 1.4rem;
+    color: #5C2E0F;
+    margin-bottom: 40px;
+    line-height: 1.9;
+    animation: fadeIn 1s ease-in-out 0.3s both;
+    background: linear-gradient(135deg, rgba(222, 184, 135, 0.3), rgba(210, 105, 30, 0.2));
+    padding: 25px;
+    border-radius: 20px;
+    border: 2px solid rgba(139, 69, 19, 0.2);
+}
+
+.coffee-celebration {
+    font-size: 120px;
+    display: block;
+    margin: 30px 0;
+    animation: spin-celebrate 1.5s ease-in-out;
+    filter: drop-shadow(0 10px 20px rgba(139, 69, 19, 0.4));
+}
+
+.back-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #D2691E 0%, #CD853F 100%);
+    color: #FFF8F0;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    animation: fadeIn 1s ease-in-out 0.6s both;
+    box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4);
+    border: 3px solid rgba(139, 69, 19, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:hover {
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 12px 35px rgba(139, 69, 19, 0.6);
+    background: linear-gradient(135deg, #CD853F 0%, #D2691E 100%);
+    border-color: #8B4513;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(-15px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(-8px); }
+}
+
+@keyframes spin-celebrate {
+    0% {
+        transform: rotate(0deg) scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: rotate(180deg) scale(1.2);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+        opacity: 1;
+    }
+}

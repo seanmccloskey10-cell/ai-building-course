@@ -1,0 +1,17 @@
+{
+  "name": "buy-me-a-coffee",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Project 06 of the AI Building Course - a Buy Me a Coffee page that takes a real payment with a Stripe Payment Link. No API key, no card handling, no cost to build.",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "netlify-cli": "^26.2.0"
+  }
+}

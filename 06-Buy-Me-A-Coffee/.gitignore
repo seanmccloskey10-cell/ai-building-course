@@ -1,0 +1,20 @@
+# ---------------------------------------------------------------------------
+# This project has no secrets — a Stripe Payment Link is a public URL, and
+# Stripe handles the card details, so there's no key in your code at all. But
+# the habit is worth keeping: if you ever add a .env to a project, this line
+# stops it reaching GitHub. It travels with the folder.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+
+# Installed packages - `npm install` recreates these
+node_modules/
+
+# Netlify's local, machine-specific state
+.netlify
+
+# Editor + OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
