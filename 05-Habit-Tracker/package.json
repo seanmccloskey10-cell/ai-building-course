@@ -1,0 +1,17 @@
+{
+  "name": "habit-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Project 05 of the AI Building Course - a habit streak tracker that teaches localStorage: saving data in the browser so it survives a refresh. No API key, no cost.",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "netlify-cli": "^26.2.0"
+  }
+}

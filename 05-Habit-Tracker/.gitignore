@@ -1,0 +1,19 @@
+# ---------------------------------------------------------------------------
+# This project has no secrets — your habit data lives in your own browser, not
+# on any server. But the habit is worth keeping: if you ever add a .env to a
+# project, this line stops it reaching GitHub. It travels with the folder.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+
+# Installed packages - `npm install` recreates these
+node_modules/
+
+# Netlify's local, machine-specific state
+.netlify
+
+# Editor + OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
