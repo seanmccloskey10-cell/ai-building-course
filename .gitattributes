@@ -1,0 +1,9 @@
+# Binary assets: never apply end-of-line conversion or text diffing.
+# (The original source PNGs were corrupted by exactly this kind of text-mode
+# round-trip, which left the header intact but destroyed the image data.)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
