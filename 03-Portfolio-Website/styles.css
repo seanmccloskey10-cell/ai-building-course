@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 30%, #3b82f6 70%, #60a5fa 100%);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+/* Sections */
+section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #1e3a8a;
+}
+
+/* About */
+#about p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Projects */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.project-card .emoji {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #1e3a8a;
+}
+
+.project-card p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: #1e3a8a;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background: #3b82f6;
+    transform: translateY(-2px);
+}
+
+/* Skills */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skill-tag {
+    background: #1e3a8a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-tag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Contact Form */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+button[type="submit"] {
+    background: #1e3a8a;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #3b82f6;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 30%, #3b82f6 70%, #60a5fa 100%);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.social-links {
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
+}
+
+footer p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
