@@ -140,17 +140,20 @@ No command line, no accounts required to *try* it.
 
 1. Go to **[app.netlify.com/drop](https://app.netlify.com/drop)**.
 2. Open your project folder in your file browser (Finder / File Explorer).
-3. **Drag the whole folder onto the page.** Netlify uploads it and, a few seconds later,
-   gives you a live URL like `https://random-name-123.netlify.app`. That link works for
-   anyone, anywhere, right now.
+3. **Select just the three site files — `index.html`, `styles.css` and `script.js` — and
+   drag those onto the page.** (Netlify also lets you drop a whole folder, but see the
+   warning below first — after `npm install` your folder is huge.) A few seconds later
+   Netlify gives you a live URL like `https://random-name-123.netlify.app`. That link
+   works for anyone, anywhere, right now.
 4. To keep it, rename it, or update it later, **sign up for a free Netlify account** (no
    card) and the site attaches to your account. Without an account the site still goes
    live, but you can't manage it afterwards.
 
-> **Don't drag `node_modules`.** If you ran `npm install`, your folder now contains a big
-> `node_modules` folder. You don't need it for a plain HTML site and it's slow to upload —
-> Netlify Drop works best under 50MB. Either drag only `index.html`, `styles.css` and
-> `script.js`, or make a copy of the folder with `node_modules` deleted and drag that.
+> **Don't drag the whole folder if you ran `npm install`.** That created a `node_modules`
+> folder that is **hundreds of megabytes** — your three actual site files are about 10 KB.
+> Netlify Drop works best under 50 MB, so dragging the whole folder is slow and can get
+> stuck. You never need `node_modules` for a plain HTML site. Drag **only the three files**
+> (step 3), or make a copy of the folder with `node_modules` deleted and drag that.
 
 ### Option B — The Netlify command line
 
