@@ -42,7 +42,7 @@ Each one is small enough to finish in a sitting and exists to teach the concept 
 | 06 | [Buy Me a Coffee](06-Buy-Me-A-Coffee/) | **Stripe** - taking an actual payment from an actual human | ✅ Ready |
 | 07 | [Dear Diary](07-Private-Notes-App/) | **Supabase** - a real hosted database, with row-level security so one user cannot read another's entries | ✅ Ready |
 | 08 | [Million Dollar Idea App](08-Personal-Notepad/) | **PWA** - making a website installable on a phone like a native app | ✅ Ready |
-| 09 | Stock Explorer | **Charts and data-to-story** - drawing real data, then having an AI narrate what the numbers mean | 🔜 Coming |
+| 09 | [Stock Explorer](09-Stock-Explorer/) | **Charts and data-to-story** - drawing real data, then having an AI narrate what the numbers mean | ✅ Ready |
 | 10 | [Daily AI Digest](10-Daily-Digest/) | **Automation** - code that runs on a schedule without you, and emails you the result via Resend | ✅ Ready |
 | 11 | [Command Center](11-Command-Center/) | **The capstone.** No walkthrough, no answer key - just a brief. Use everything the ten taught you | ✅ Ready |
 
@@ -58,8 +58,9 @@ ready - if a row says "Coming", the folder is not here yet.
   and tells you what to do if yours is older.
 - **[Claude Code](https://claude.com/claude-code)** - the AI agent that does the building
   with you.
-- **A card on file with [Anthropic](https://console.anthropic.com)** for Projects 01 and 10
-  only, and only a few pence of usage each. Every project says up front what it costs. Most
+- **A card on file with [Anthropic](https://console.anthropic.com)** for Projects 01, 09 and
+  10 only, and only a few pence of usage each. (Project 09 also uses a second key for stock
+  data, from Alpha Vantage - free, no card.) Every project says up front what it costs. Most
   cost nothing.
 
 You do **not** need to install Git, Python, or any command-line tools ahead of time. If a
