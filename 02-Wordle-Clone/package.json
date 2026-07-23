@@ -1,0 +1,17 @@
+{
+  "name": "wordle-clone",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Project 02 of the AI Building Course - a Wordle-style word game that teaches game logic and state. No API key, no account, free.",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "netlify-cli": "^26.2.0"
+  }
+}
