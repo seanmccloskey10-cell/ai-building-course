@@ -42,6 +42,10 @@ desktop.ini
 # A stray file Windows can create when a command redirects output badly
 nul
 
+# Deno lockfile that Netlify's local dev server drops in when it boots its edge
+# runtime - a machine artifact, not part of any project
+deno.lock
+
 # Python leftovers, in case anyone runs a local server the old way
 __pycache__/
 venv/
