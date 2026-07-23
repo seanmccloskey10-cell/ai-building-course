@@ -1,0 +1,17 @@
+{
+  "name": "million-dollar-idea-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Project 08 of the AI Building Course - a notes app you can install on your phone like a real app. Teaches PWAs (manifest, service worker, offline). No API key, no cost.",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "netlify-cli": "^26.2.0"
+  }
+}
