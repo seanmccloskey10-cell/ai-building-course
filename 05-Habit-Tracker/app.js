@@ -16,12 +16,14 @@ let selectedHabits = [];
 let habitData = {};
 
 function init() {
-    loadData();
-    renderHabitList();
-    renderTracker();
+    // Wire up the buttons FIRST. That way, even if something in a render ever
+    // goes wrong, the Reset button still works as an escape hatch.
     document.getElementById('submit-btn').addEventListener('click', handleSubmit);
     document.getElementById('reset-btn').addEventListener('click', resetHabits);
     document.getElementById('modal-close').addEventListener('click', hideModal);
+    loadData();
+    renderHabitList();
+    renderTracker();
 }
 
 function saveData() {
@@ -94,6 +96,9 @@ function renderTracker() {
     container.innerHTML = selectedHabits.map(habitId => {
         const habit = HABITS.find(h => h.id === habitId);
         const data = habitData[habitId];
+        // If you edit the HABITS list and remove or rename a habit you'd already
+        // selected, its id is now an orphan - skip it instead of crashing.
+        if (!habit || !data) return '';
         const completedCount = data.completedDays.filter(d =>
             days.some(day => day.date === d)
         ).length;
@@ -107,7 +112,7 @@ function renderTracker() {
                     ${streak > 0 ? `<span class="streak-badge">🔥 ${streak} day${streak > 1 ? 's' : ''}</span>` : ''}
                 </div>
                 <div class="progress-container">
-                    <div class="progress-text">${completedCount}/7 days this week</div>
+                    <div class="progress-text">${completedCount}/7 of the last 7 days</div>
                     <div class="progress-bar">
                         <div class="progress-fill" style="width: ${(completedCount / 7) * 100}%"></div>
                     </div>
@@ -130,8 +135,8 @@ function calculateStreak(completedDays) {
     if (!completedDays || completedDays.length === 0) return 0;
 
     const sortedDays = [...completedDays].sort().reverse();
-    const today = new Date().toISOString().split('T')[0];
-    const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+    const today = ymd(new Date());
+    const yesterday = ymd(new Date(Date.now() - 86400000));
 
     if (sortedDays[0] !== today && sortedDays[0] !== yesterday) {
         return 0;
@@ -153,23 +158,31 @@ function calculateStreak(completedDays) {
     return streak;
 }
 
+// Turn a Date into a 'YYYY-MM-DD' string using the LOCAL calendar day.
+// (Using toISOString() here would be a bug: it converts to UTC first, so an
+// evening entry in the Americas would be stored under tomorrow's date and the
+// streak would count wrong. Always build the day string from local parts.)
+function ymd(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+// The last seven days, oldest first, ending with today. A rolling window - so
+// there are never any future days to tap, and it doesn't reset on Mondays.
 function getLast7Days() {
     const days = [];
     const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const today = new Date();
 
-    const monday = new Date(today);
-    const dayOfWeek = today.getDay();
-    const daysFromMonday = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
-    monday.setDate(today.getDate() - daysFromMonday);
-
-    for (let i = 0; i < 7; i++) {
-        const date = new Date(monday);
-        date.setDate(monday.getDate() + i);
+    for (let i = 6; i >= 0; i--) {
+        const date = new Date(today);
+        date.setDate(today.getDate() - i);
         days.push({
             name: dayNames[date.getDay()],
             num: date.getDate(),
-            date: date.toISOString().split('T')[0]
+            date: ymd(date)
         });
     }
 

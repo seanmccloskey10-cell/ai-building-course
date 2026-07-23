@@ -41,7 +41,7 @@ most important rules in all of software, and it's easy to get wrong.*
 
 ## 💅 Polish
 
-> Add a celebration when I hit a milestone — a little burst of emojis and a congratulations pop-up. Colour the completed days, animate the progress bars, and make it all work nicely on a phone.
+> Add a "Submit" button that celebrates my progress with a little burst of emojis and a congratulations pop-up when I tap it. Colour the completed days, animate the progress bars, and make it all work nicely on a phone.
 
 ---
 

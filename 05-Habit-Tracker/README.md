@@ -131,7 +131,18 @@ This serves the app at **http://localhost:8888**.
 > seconds before it genuinely is. If the page is blank, give it up to 30 seconds and
 > refresh. This only happens once.
 
-If port 8888 is busy, use `npx netlify dev --port 8899`. Press `Ctrl` + `C` to stop.
+If port 8888 is busy, the tidiest fix is to close the old terminal that's still
+holding it and re-run on 8888. You *can* run `npx netlify dev --port 8899` instead —
+but see the note below first.
+
+> **Always reopen on the same address.** Your saved habits are tied to the exact web
+> address, *including the port number*. Notes saved at `localhost:8888` do **not** show
+> up at `localhost:8899` — to the browser those are two different sites with two separate
+> notebooks. If your habits ever look gone after you switched ports, they're not lost:
+> go back to the original `localhost:8888` and they're all there. This is the same reason
+> they don't appear on a different browser or device.
+
+Press `Ctrl` + `C` to stop the server.
 
 **The real test:** pick a couple of habits, tick some days, then **refresh the page**.
 Everything's still there. That's localStorage doing its job.
