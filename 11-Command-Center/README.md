@@ -86,7 +86,7 @@ Read these once. They're the frame; the rest is yours.
 ## Before you start
 
 - **Node.js 20+** (`node --version`) — same as always.
-- **Your Anthropic key** from [console.anthropic.com](https://console.anthropic.com) → API
+- **Your Anthropic key** from [platform.claude.com](https://platform.claude.com) → API
   keys, with a little credit under Billing. The AI console and Intel Feed cost a few pennies
   per use; everything else is free.
 - **Crypto needs no key** — CoinGecko's public API is free, exactly like Project 04.

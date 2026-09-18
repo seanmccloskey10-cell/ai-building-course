@@ -63,7 +63,7 @@ STEP 4 - THE TWO KEYS (I fill these in myself)
 
 Explain that I need two free keys, and walk me through getting them - but do NOT use or ask
 me to paste a real key to you; I put them in my own .env file:
-  - An Anthropic key from https://console.anthropic.com (API keys). Needs a few $ of credit
+  - An Anthropic key from https://platform.claude.com (API keys). Needs a few $ of credit
     under Billing. Note a Claude.ai subscription is NOT API credit.
   - A Resend key from https://resend.com (API Keys). Free tier, no card.
 Have me run `npm install`, then copy .env.example to .env. Tell me to leave SEND_EMAIL=false

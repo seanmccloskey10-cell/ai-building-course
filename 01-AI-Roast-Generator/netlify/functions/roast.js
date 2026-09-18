@@ -129,7 +129,7 @@ function friendlyError(error) {
             error: 'Your Anthropic account has no credit.',
             details:
                 'A Claude.ai subscription does NOT include API credit - they are ' +
-                'separate. Add a few dollars at console.anthropic.com under Billing.'
+                'separate. Add a few dollars at platform.claude.com under Billing.'
         };
     }
 

@@ -80,7 +80,7 @@ If that prints `v20.x` or higher, you're fine. If not, install the LTS version f
 
 You'll need **two free keys**, and this is the only project that uses a real one of each:
 
-- **An Anthropic key** for the AI, from [console.anthropic.com](https://console.anthropic.com)
+- **An Anthropic key** for the AI, from [platform.claude.com](https://platform.claude.com)
   → API keys. Add a few dollars of credit under Billing; each digest costs pennies.
   (A Claude.ai subscription is **not** API credit — they're billed separately.)
 - **A Resend key** for sending email, from [resend.com](https://resend.com) → API Keys.
@@ -203,7 +203,7 @@ See **[PROMPTS.md](PROMPTS.md)** for the prompts that build the pipeline piece b
 | `No ANTHROPIC_API_KEY found` | You haven't created `.env` from `.env.example`, or haven't pasted your key into it |
 | It runs but no email arrives | `SEND_EMAIL` isn't `true`, or `EMAIL_TO` is blank, or `RESEND_API_KEY` is missing — the script tells you which |
 | Resend error about the recipient | On the free tier you can only email the address you signed up to Resend with. Set `EMAIL_TO` to that address |
-| "credit balance is too low" | Your Anthropic account needs a little credit — add a few dollars under Billing at console.anthropic.com |
+| "credit balance is too low" | Your Anthropic account needs a little credit — add a few dollars under Billing at platform.claude.com |
 | `command not found: npm` | Node.js isn't installed, or you need to fully quit and reopen VS Code / your terminal |
 | `npm.ps1 cannot be loaded because running scripts is disabled` | Windows PowerShell blocks scripts by default. Use `cmd`, or run once: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` and answer `Y` |
 | The GitHub automation didn't run | Check the schedule lines are uncommented, all three secrets are set, and the repo's Actions are enabled (Settings → Actions) |

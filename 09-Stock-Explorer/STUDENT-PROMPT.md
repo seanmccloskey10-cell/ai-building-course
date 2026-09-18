@@ -64,7 +64,7 @@ Explain I need two free keys and walk me through getting them - but do NOT use o
 paste a real key to you:
   - Alpha Vantage (free stock data) at https://www.alphavantage.co/support/#api-key - no card,
     ~25 lookups/day on the free tier.
-  - Anthropic at https://console.anthropic.com (API keys) - the same key from Projects 01 and 10;
+  - Anthropic at https://platform.claude.com (API keys) - the same key from Projects 01 and 10;
     needs a little credit under Billing.
 Have me run `npm install`, then copy .env.example to .env and put both keys in it.
 

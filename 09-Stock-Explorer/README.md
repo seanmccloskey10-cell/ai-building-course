@@ -72,7 +72,7 @@ if yours is older.
 - **Alpha Vantage** — free stock data. Grab a key in ~20 seconds at
   [alphavantage.co](https://www.alphavantage.co/support/#api-key), no card. The free tier
   allows about **25 lookups a day** (and 5 a minute), which is plenty for exploring.
-- **Anthropic** — for the AI analysis, from [console.anthropic.com](https://console.anthropic.com)
+- **Anthropic** — for the AI analysis, from [platform.claude.com](https://platform.claude.com)
   → API keys, with a little credit under Billing. The same key from Projects 01 and 10.
 
 ---

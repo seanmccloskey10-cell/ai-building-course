@@ -17,7 +17,7 @@ exports.handler = async (event) => {
             details:
                 'Create a file called .env next to package.json containing ' +
                 'ANTHROPIC_API_KEY=sk-ant-your-key-here, then restart the server. ' +
-                'Get a key at https://console.anthropic.com'
+                'Get a key at https://platform.claude.com'
         });
     }
 
@@ -103,7 +103,7 @@ function friendlyError(error) {
             error: 'Your Anthropic account has no credit.',
             details:
                 'A Claude.ai subscription does NOT include API credit - they are separate. ' +
-                'Add a few dollars at console.anthropic.com under Billing.'
+                'Add a few dollars at platform.claude.com under Billing.'
         };
     }
     if (error?.status === 429) {

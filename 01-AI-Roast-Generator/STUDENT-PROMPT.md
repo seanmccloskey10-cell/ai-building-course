@@ -73,7 +73,7 @@ on the server.
 
 Then walk me through getting one:
 
-  1. Go to https://console.anthropic.com and sign up.
+  1. Go to https://platform.claude.com and sign up.
   2. Click "API keys", then "Create Key". Copy it - it is only shown once.
   3. Go to "Billing" and add a small amount of credit. A few dollars is plenty; this
      project costs pennies.
@@ -82,17 +82,20 @@ Tell me clearly that a Claude.ai subscription is NOT API credit - they are separ
 products with separate billing. This trips up almost everyone: without credit the app
 will build and run perfectly and then fail on the first roast.
 
-Then STOP and wait for me to paste my key into the chat. Do not continue past this
-point without it. Do not invent a key, do not use a placeholder, and do not go
-looking for an existing key anywhere else on my computer - I want to do this bit
-myself, because doing it once is how I learn it.
+Then STOP. Create the .env file first, containing the line ANTHROPIC_API_KEY= and
+nothing after it, and tell me to paste my key into that file myself. Wait until I say
+it is saved. Never ask me to paste my key into this chat. Do not continue past this
+point. Do not invent a key, do not use a placeholder, and do not go looking for an
+existing key anywhere else on my computer - I want to do this bit myself, because
+doing it once is how I learn it.
 
-When I give you the key:
-  - Create the .env file for me (this avoids a real trap: on Windows, creating files
-    in File Explorer silently produces .env.txt, which looks identical and does not
-    work).
-  - Write it as one line: ANTHROPIC_API_KEY=<my key> with no quotes, no spaces around
-    the = and no trailing whitespace or blank line after it.
+When I tell you it is saved:
+  - Check the file is called .env and not .env.txt (a real trap: on Windows, creating
+    files in File Explorer silently produces .env.txt, which looks identical and does
+    not work).
+  - Check it is one line, ANTHROPIC_API_KEY=<my key>, with no quotes, no spaces around
+    the = and no trailing whitespace or blank line after it. Check the shape without
+    showing the key back to me.
   - Confirm that .gitignore already lists .env, and show me the line. Explain that
     this is what stops my key reaching GitHub.
   - Never write my key anywhere except .env. Do not echo it back to me at all -

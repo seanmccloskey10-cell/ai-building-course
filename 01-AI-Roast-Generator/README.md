@@ -102,7 +102,7 @@ You do **not** need Python, Git, or the Netlify CLI installed. The setup handles
 
 ## Getting your API key
 
-1. Go to **[console.anthropic.com](https://console.anthropic.com)** and sign up.
+1. Go to **[platform.claude.com](https://platform.claude.com)** and sign up.
 2. Click **API keys** in the left sidebar, then **Create Key**. Name it anything.
 3. **Copy it immediately.** It is shown once and never again. If you lose it, delete
    that key and make a new one — no harm done.
@@ -116,7 +116,7 @@ You do **not** need Python, Git, or the Netlify CLI installed. The setup handles
 > separate billing, and having one does not fund the other.
 >
 > The API is what your *code* uses, and it is billed separately at
-> **console.anthropic.com**. If you skip the Billing step, your app will build and run
+> **platform.claude.com**. If you skip the Billing step, your app will build and run
 > perfectly and then fail on the first roast with a "credit balance is too low" error.
 >
 > The good news: API usage is pay-as-you-go and genuinely cheap. This whole project
@@ -266,7 +266,7 @@ and committing would publish your key.
 
 > **If you ever leak a key** — pushed it, pasted it in a screenshot, sent it in a
 > message — deleting the file is not enough. The secret is already out. Go to
-> [console.anthropic.com](https://console.anthropic.com), **delete that key**, and
+> [platform.claude.com](https://platform.claude.com), **delete that key**, and
 > create a new one. That instantly makes the leaked one worthless. Do it immediately;
 > automated scrapers find exposed keys within minutes.
 

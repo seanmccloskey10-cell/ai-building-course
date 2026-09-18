@@ -58,7 +58,7 @@ ready - if a row says "Coming", the folder is not here yet.
   and tells you what to do if yours is older.
 - **[Claude Code](https://claude.com/claude-code)** - the AI agent that does the building
   with you.
-- **A card on file with [Anthropic](https://console.anthropic.com)** for Projects 01, 09 and
+- **A card on file with [Anthropic](https://platform.claude.com)** for Projects 01, 09 and
   10 only, and only a few pence of usage each. (Project 09 also uses a second key for stock
   data, from Alpha Vantage - free, no card.) Every project says up front what it costs. Most
   cost nothing.

@@ -431,7 +431,7 @@ async function main() {
     if (!process.env.ANTHROPIC_API_KEY) {
         console.log('\n❌ No ANTHROPIC_API_KEY found.');
         console.log('   Copy .env.example to .env and paste your key in, then run again.');
-        console.log('   Get a key at https://console.anthropic.com (add a few $ of credit under Billing).\n');
+        console.log('   Get a key at https://platform.claude.com (add a few $ of credit under Billing).\n');
         process.exit(1);
     }
 
